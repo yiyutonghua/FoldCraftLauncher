@@ -169,7 +169,7 @@ public class FCLInput implements View.OnCapturedPointerListener {
             setPointerId(EXTERNAL_MOUSE_ID);
             setPointer(targetX, targetY, EXTERNAL_MOUSE_ID);
             setPointerId(null);
-        } else {
+        } else if (event == null || event.getAction() == MotionEvent.ACTION_MOVE) {
             int targetX = menu.getPointerX() + deltaX;
             int targetY = menu.getPointerY() + deltaY;
             if (menu.getMenuSetting().isEnableGyroscope()) {
